@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/calculator.css">
+    <title>Calculator</title>
+    <script>
+        var num1 = ''
+        var num2 = ''
+        var opr = ''
+        var eq = ''
+        var ans = '0'
+
+        const zero = () => {
+            if (opr != '') {
+                num2 += '0'
+            }
+            else {
+                num1 += '0'
+            }
+
+            eq += '0'
+            eqOut.innerHTML = eq
+        }
+
+        const one = () => {
+            if (opr != '') {
+                num2 += '1'
+            }
+            else {
+                num1 += '1'
+            }
+
+            eq += '1'
+            eqOut.innerHTML = eq
+        }
+
+        const two = () => {
+            if (opr != '') {
+                num2 += '2'
+            }
+            else {
+                num1 += '2'
+            }
+
+            eq += '2'
+            eqOut.innerHTML = eq
+        }
+
+        const three = () => {
+            if (opr != '') {
+                num2 += '3'
+            }
+            else {
+                num1 += '3'
+            }
+
+            eq += '3'
+            eqOut.innerHTML = eq
+        }
+
+        const four = () => {
+            if (opr != '') {
+                num2 += '4'
+            }
+            else {
+                num1 += '4'
+            }
+
+            eq += '4'
+            eqOut.innerHTML = eq
+        }
+
+        const five = () => {
+            if (opr != '') {
+                num2 += '5'
+            }
+            else {
+                num1 += '5'
+            }
+
+            eq += '5'
+            eqOut.innerHTML = eq
+        }
+
+        const six = () => {
+            if (opr != '') {
+                num2 += '6'
+            }
+            else {
+                num1 += '6'
+            }
+
+            eq += '6'
+            eqOut.innerHTML = eq
+        }
+
+        const seven = () => {
+            if (opr != '') {
+                num2 += '7'
+            }
+            else {
+                num1 += '7'
+            }
+
+            eq += '7'
+            eqOut.innerHTML = eq
+        }
+
+        const eight = () => {
+            if (opr != '') {
+                num2 += '8'
+            }
+            else {
+                num1 += '8'
+            }
+
+            eq += '8'
+            eqOut.innerHTML = eq
+        }
+
+        const nine = () => {
+            if (opr != '') {
+                num2 += '9'
+            }
+            else {
+                num1 += '9'
+            }
+
+            eq += '9'
+            eqOut.innerHTML = eq
+        }
+
+        const dot = () => {
+            if (opr != '') {
+                if (num2 == '') {
+                    num2 = '0.'
+                    eq += '0.'
+                    eqOut.innerHTML = eq
+                }
+                else {
+                    num2 += '.'
+                    eq += '.'
+                    eqOut.innerHTML = eq
+                }
+            }
+            else {
+                if (num1 == '') {
+                    num1 = '0.'
+                    eq += '0.'
+                    eqOut.innerHTML = eq
+                }
+                else {
+                    num1 += '.'
+                    eq += '.'
+                    eqOut.innerHTML = eq
+                }
+            }
+        }
+
+        const plus = () => {
+            if (num2 != '') {
+                calculate()
+                num1 = ans
+                eq = num1
+            }
+            else if (num2 == '' && ans != '0') {
+                num1 = ans
+                eq = num1
+            }
+
+            opr = '+'
+            eq += ' + '
+            eqOut.innerHTML = eq
+        }
+
+        const min = () => {
+            if (num2 != '') {
+                calculate()
+                num1 = ans
+                eq = num1
+            }
+            else if (num2 == '' && ans != '0') {
+                num1 = ans
+                eq = num1
+            }
+
+            opr = '-'
+            eq += ' - '
+            eqOut.innerHTML = eq
+        }
+
+        const mul = () => {
+            if (num2 != '') {
+                calculate()
+                num1 = ans
+                eq = num1
+            }
+            else if (num2 == '' && ans != '0') {
+                num1 = ans
+                eq = num1
+            }
+
+            opr = 'x'
+            eq += ' x '
+            eqOut.innerHTML = eq
+        }
+
+        const div = () => {
+            if (num2 != '') {
+                calculate()
+                num1 = ans
+                eq = num1
+            }
+            else if (num2 == '' && ans != '0') {
+                num1 = ans
+                eq = num1
+            }
+
+            opr = '/'
+            eq += ' / '
+            eqOut.innerHTML = eq
+        }
+
+        const clr = () => {
+            console.log("hello")
+            num1 = ''
+            num2 = ''
+            opr = ''
+            eq = ''
+            ans = '0'
+
+            eqOut.innerHTML = '0'
+            ansOut.innerHTML = ans
+        }
+
+        const calculate = () => {
+            if (num1 != '' && opr != '' && num2 != '') {
+                num1 = parseFloat(num1)
+                num2 = parseFloat(num2)
+                console.log(num1, num2, opr, ans)
+                if (opr == '+') {
+                    ans = num1 + num2
+                }
+                else if (opr == '-') {
+                    ans = num1 - num2
+                }
+                else if (opr == 'x') {
+                    ans = num1 * num2
+                }
+                else {
+                    if (num2 == 0) {
+                        ans = "Infinite"
+                    }
+                    else {
+                        ans = num1 / num2
+                    }
+                }
+            }
+            else {
+                return
+            }
+
+            num1 = ''
+            num2 = ''
+            opr = ''
+            ansOut.innerHTML = ans
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="calBody">
+            <div class="calName">
+                <p>CASIO</p>
+                <p>fx-991EX</p>
+            </div>
+            <div class="result">
+                <p class="eq" id="eqOut">0</p>
+                <p class="ans" id="ansOut">0</p>
+                <script>
+                    let eqOut = document.getElementById("eqOut")
+                    let ansOut = document.getElementById("ansOut")
+                </script>
+            </div>
+            <div class="buttons">
+                <div>
+                    <div>
+                        <button onclick="zero()">0</button>
+                        <div>
+                            <button onclick="dot()">.</button>
+                            <button onclick="clr()" style="background-color: lightcoral;">C</button>
+                        </div>
+                        <button onclick="calculate()" style="background-color: lightgreen;">=</button>
+                        <button onclick="plus()" style="background-color: lightgray;">+</button>
+                    </div>
+                    <div>
+                        <button onclick="one()">1</button>
+                        <button onclick="two()">2</button>
+                        <button onclick="three()">3</button>
+                        <button onclick="min()" style="background-color: lightgray;">-</button>
+                    </div>
+                    <div>
+                        <button onclick="four()">4</button>
+                        <button onclick="five()">5</button>
+                        <button onclick="six()">6</button>
+                        <button onclick="mul()" style="background-color: lightgray;">x</button>
+                    </div>
+                    <div>
+                        <button onclick="seven()">7</button>
+                        <button onclick="eight()">8</button>
+                        <button onclick="nine()">9</button>
+                        <button onclick="div()" style="background-color: lightgray;">/</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

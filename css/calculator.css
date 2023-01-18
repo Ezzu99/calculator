@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    color: gray;
+    font-family: 'consolas', sans-serif;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 243);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calBody {
+    padding: 12px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 24px rgba(128, 128, 128, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+.calName {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.result {
+    width: 324px;
+    height: 100px;
+    padding: 12px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px rgba(128, 128, 128, 0.2),
+                -4px -4px 8px rgba(245, 245, 245, 0.2),
+                inset -4px -4px 8px rgba(245, 245, 245, 0.2),
+                inset 4px 4px 8px rgba(128, 128, 128, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    overflow: auto;
+}
+
+.eq {
+    font-size: 22px;
+}
+
+.ans {
+    font-size: 40px;
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    box-shadow: 2px 2px 8px rgba(128, 128, 128, 0.2),
+                -2px -2px 8px rgba(245, 245, 245, 0.2),
+                inset -2px -2px 8px rgba(245, 245, 245, 0.2),
+                inset 2px 2px 8px rgba(128, 128, 128, 0.2);
+    font-size: 24px;
+}
+
+button:active {
+    box-shadow: 1px 1px 8px rgba(245, 245, 245, 0.2),
+                -1px -1px 8px rgba(128, 128, 128, 0.2),
+                inset -1px -1px 8px rgba(128, 128, 128, 0.2),
+                inset 1px 1px 8px rgba(245, 245, 245, 0.2);
+}
+
+button:focus {
+    border: none;
+    outline: none;
+}
+
+.buttons > div {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 12px;
+}
+
+.buttons > div button {
+    width: 72px;
+    height: 72px;
+    transition: 0.2s ease;
+}
+
+.buttons > div > div {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.buttons > div > div > div {
+    width: 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buttons > div > div > div button {
+    height: 32px;
+}
