@@ -12,8 +12,13 @@
         var opr = ''
         var eq = ''
         var ans = '0'
+        var calculated = false
 
         const zero = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '0'
             }
@@ -26,6 +31,10 @@
         }
 
         const one = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '1'
             }
@@ -38,6 +47,10 @@
         }
 
         const two = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '2'
             }
@@ -50,6 +63,10 @@
         }
 
         const three = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '3'
             }
@@ -62,6 +79,10 @@
         }
 
         const four = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '4'
             }
@@ -74,6 +95,10 @@
         }
 
         const five = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '5'
             }
@@ -86,6 +111,10 @@
         }
 
         const six = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '6'
             }
@@ -98,6 +127,10 @@
         }
 
         const seven = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '7'
             }
@@ -110,6 +143,10 @@
         }
 
         const eight = () => {
+            if (calculated) {
+                clr()
+            }
+            
             if (opr != '') {
                 num2 += '8'
             }
@@ -122,6 +159,10 @@
         }
 
         const nine = () => {
+            if (calculated) {
+                clr()
+            }
+
             if (opr != '') {
                 num2 += '9'
             }
@@ -173,6 +214,7 @@
 
             opr = '+'
             eq += ' + '
+            calculated = false
             eqOut.innerHTML = eq
         }
 
@@ -189,6 +231,7 @@
 
             opr = '-'
             eq += ' - '
+            calculated = false
             eqOut.innerHTML = eq
         }
 
@@ -205,6 +248,7 @@
 
             opr = 'x'
             eq += ' x '
+            calculated = false
             eqOut.innerHTML = eq
         }
 
@@ -221,26 +265,30 @@
 
             opr = '/'
             eq += ' / '
+            calculated = false
             eqOut.innerHTML = eq
         }
 
         const clr = () => {
-            console.log("hello")
             num1 = ''
             num2 = ''
             opr = ''
             eq = ''
             ans = '0'
+            calculated = false
 
             eqOut.innerHTML = '0'
             ansOut.innerHTML = ans
         }
 
         const calculate = () => {
-            if (num1 != '' && opr != '' && num2 != '') {
+            if (num1 == 'Infinite' && num2 == '0' && opr == 'x') {
+                ans = 'Undefined'
+            }
+            else if (num1 != '' && num1 != 'Infinite' && num1 != 'Undefined' && opr != '' && num2 != '') {
                 num1 = parseFloat(num1)
                 num2 = parseFloat(num2)
-                console.log(num1, num2, opr, ans)
+
                 if (opr == '+') {
                     ans = num1 + num2
                 }
@@ -259,13 +307,12 @@
                     }
                 }
             }
-            else {
-                return
-            }
 
             num1 = ''
             num2 = ''
             opr = ''
+            eq = ''
+            calculated = true
             ansOut.innerHTML = ans
         }
     </script>
